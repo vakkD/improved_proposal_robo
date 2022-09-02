@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Project Proposal.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+	background-color: #0D1117;
+	color:white;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h3 id="files">Files</h3>
+<p>[1] <a href="https://raw.githubusercontent.com/vakkD/robocarfinal/main/cardesign.jpeg">Car Design</a><br>
+[2] <a href="https://raw.githubusercontent.com/vakkD/robocarfinal/main/grearboxplan_design.jpeg">Gearbox Plan/Design</a><br>
+[3] <a href="https://raw.githubusercontent.com/vakkD/robocarfinal/main/storycard_components.jpeg">Design Cards</a><br>
+[4] <a href="https://raw.githubusercontent.com/vakkD/robocarfinal/main/gearboxv2%20compact_design.jpeg">Gearbox V2 Design</a><br>
+[5] <a href="https://github.com/vakkD/vakkD.github.io/blob/main/index.html/gearboxv1%20angleview_complete.mkv">Gearbox V1 Running</a><br>
+[6] <a href="https://github.com/vakkD/vakkD.github.io/blob/main/index.html/gearboxv1.blend">Gearbox V1 Blender File</a><br>
+[7] <a href="https://github.com/vakkD/vakkD.github.io/blob/main/index.html/gearboxv1%20calculations.txt">Gearbox V1 Calculations</a><br>
+[8] <a href="https://github.com/vakkD/vakkD.github.io/blob/main/index.html/carpototyperobotics.blend">Car Shell Design V1</a><br>
+[9] <a href="https://github.com/vakkD/vakkD.github.io/blob/main/updatedproposal.png">Box and Arrows Design</a></p>
+<h3 id="links">Links</h3>
+<p>[10] <a href="https://geargenerator.com/#200,200,100,6,0,0,341.40000000000146,4,1,12,3,4,20,0,0,0,0,0,0,1,6,1.5,4,20,0,0,0,0,0,0,0,24,6,4,20,-35,0,0,0,0,2,1,6,1.5,4,20,-35,0,0,0,0,0,1,3,-35">Gear Generator (with my gearv1 design)</a><br>
+[11] <a href="https://woodgears.ca/gear/ratio.html">Gear Ratios</a><br>
+[12] <a href="https://khkgears.net/new/gear_knowledge/the-first-step-of-mechanism-design-using-gears/know-about-gear-types-and-relations-between-the-two-shafts.html">Gear Types</a></p>
+<h1 id="description">Description</h1>
+<p>Our project is to create an RC car using Arduino components, using knowledge from the simple car we created the last term. We will implement systems such as gearing and motors. The intended audience of this project would be people who have an interest in RC cars and want to expand their knowledge and see how they can make them and improve upon its design. The project itself can also be used as an educational resource as the theory behind the car itself is relatively simple in terms of motor control and would allow people to have fun learning about stepper and general DC motors and how they function.</p>
+<p>We are making an Arduino RC car. We are taking what we created last term and massively improving it. My role in this project is to design and create the steering mechanism, gearbox and differential rear wheel drive. Lewis' role is to program the motors and Elisha has control of all the circuitry.</p>
+<h1 id="my-role-and-idea">My Role and Idea</h1>
+<h3 id="main-drive">Main Drive</h3>
+<p>Two motors can be used to increase the torque, using a differential for two inputs and one output, allowing two motors to power one shaft <a href="https://raw.githubusercontent.com/vakkD/robocarfinal/main/storycard_components.jpeg">[3.2]</a>. Or two motors spinning in the same direction, on either side of the shaft, both giving power directly to the shaft <a href="https://raw.githubusercontent.com/vakkD/robocarfinal/main/storycard_components.jpeg">[3.4]</a>, though two motors would be very unlikely to be needed and we will probably just use one motor. This setup of two motors would only be needed if the car ends up being very heavy.
+<br><br></p>
+<h3 id="gear-system-overview">Gear System Overview</h3>
+<p>The motor power will be driven into the gearbox which will control the torque and speed depending on the terrain. The design that I have created currently only supports manual transmission (without a clutch). Meaning at the moment, shifting has to be done using an external servo motor. The gearbox is two-speed, 2:1 and 1:2 <a href="https://woodgears.ca/gear/ratio.html">[11]</a>, the gif below explains better how this works, but the big and small gear switch spots, from input to output. Having the small gear as input creates more torque (2:1) and the large gear as input creates more speed (1:2) <a href="https://raw.githubusercontent.com/vakkD/robocarfinal/main/gearboxv1%20calculations.txt">[7]</a>, this can be seen <a href="https://geargenerator.com/#200,200,100,6,0,0,341.40000000000146,4,1,12,3,4,20,0,0,0,0,0,0,1,6,1.5,4,20,0,0,0,0,0,0,0,24,6,4,20,-35,0,0,0,0,2,1,6,1.5,4,20,-35,0,0,0,0,0,1,3,-35">[10]</a>. This power will then feed into the drive shaft that will go into the limited slip diff and spin both the back wheels <a href="https://raw.githubusercontent.com/vakkD/robocarfinal/main/storycard_components.jpeg">[3.1]</a> and <a href="https://raw.githubusercontent.com/vakkD/robocarfinal/main/cardesign.jpeg">[1]</a>. My box and arrows design is a better representation of this <a href="https://raw.githubusercontent.com/vakkD/robocarfinal/main/robocar_box_arrow.jpg">[9]</a>, this shows the full system and how I plan to lay everything out, at the moment anyway. All custom parts related to gearing will be 3D printed.
+<br><br></p>
+<h3 id="turning-system">Turning System</h3>
+<p>Turning will work with one stepper motor (explained why in Lewis' writeup) connected to a gear at the end. This end gear will be on a gear rack <a href="https://khkgears.net/new/gear_knowledge/the-first-step-of-mechanism-design-using-gears/know-about-gear-types-and-relations-between-the-two-shafts.html">[11]</a>, moving the plate left and right, which then turn the wheels <a href="https://raw.githubusercontent.com/vakkD/robocarfinal/main/storycard_components.jpeg">[3.3]</a>. Using a gear rack like this allows us to turn the wheels itself, instead of using wheel speed. Both wheels turn on their own axis.
+<br><br></p>
+<h3 id="gearbox">Gearbox</h3>
+<p>My original design for the gearbox can be seen in file <a href="https://raw.githubusercontent.com/vakkD/robocarfinal/main/grearboxplan_design.jpeg">[2]</a>, this didn't work for many reasons so I decided to start over. Playing with gear ratios and doing lots of research, I realised that instead of trying to shift to an entire different train (trying to replicate a cars gearbox) I can just change the order. So far it is only 2-speed with an automatic-manual transmission.</p>
+<p><img src="https://github.com/vakkD/vakkD.github.io/blob/main/gearboxv1%20angleview_complete_compressed.gif" alt="gearboxv1 angleview_complete_compressed.gif">
+<br><sub>(the quality is bad due to attempts at reducing file size, loss-less version <a href="https://github.com/vakkD/vakkD.github.io/blob/main/gearboxv1%20angleview_complete.mkv">[5]</a>, the gear speed is not accurate on this demonstration, it is only to show the mechanism)</sub></p>
+<p>I have created a new, more compact design <a href="https://github.com/vakkD/vakkD.github.io/blob/main/gearboxv1%20angleview_complete.mkv">[4]</a>, this is not worth giving a description for as it follows the same principle as V1 <a href="https://github.com/vakkD/vakkD.github.io/blob/main/index.html/gearboxv1%20calculations.txt">[7]</a>, just has a shortened rod, condensing the entire mechanism, all other components are the same.
+<br><br></p>
+<h3 id="car-frame-design">Car Frame Design</h3>
+<p>I created a rough 3D model for the car, so that we can print it later <a href="https://github.com/vakkD/vakkD.github.io/blob/main/index.html/carpototyperobotics.blend">[8]</a>. The wheels will fall off each side and be supported by some suspension <a href="https://raw.githubusercontent.com/vakkD/robocarfinal/main/cardesign.jpeg">[1]</a>.</p>
+<p>I have gone over the design for many components a number of times, I have finalised all these mentioned here but I think there will be changes later down, especially with the gearbox.</p>
+<h1 id="list-of-components">List of Components</h1>
+<ul>
+<li>1x or 2x Arduino: This is the main controller that all other components will be connected to, this does all the work. This will spin the back wheels and control speed, and manage the turning. An extra Arduino may be used as a controller.</li>
+<li>2x Front Wheels: Free spinning wheels at the front, connected to the steering system.</li>
+<li>1x Steering System: Steering system complete with gears to turn the two from wheels.</li>
+<li>1x Servo: Servo to control the turning.</li>
+<li>2x Back Wheels: Back wheels to move the car, both wheels connected to one differential.</li>
+<li>1x Differential: Used to split the power from one drive to two wheels, allowing each to spin independently form each other. The differential is connected to the gearbox through the drive shaft.</li>
+<li>1x Drive Shaft: This connects the gearbox to the differential, allowing power to output from gearbox and input to differential.</li>
+<li>1x Multi-Speed Gearbox: The gearbox shifts through gears to allow the car to go faster.</li>
+<li>1x Motor: This motor will be attached to the gearbox inputting power.</li>
+<li>2x Joystick: The two joysticks will be used to control the car, possibly connected with I2C.</li>
+</ul>
+<h1 id="estimated-task-completion-time">Estimated Task Completion Time</h1>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Create 3D Model for Differential</td>
+<td>1.5 hr</td>
+</tr>
+<tr>
+<td>3D Print Differential</td>
+<td>5 hr</td>
+</tr>
+<tr>
+<td>Create 3D Model for Steering System</td>
+<td>1 hr</td>
+</tr>
+<tr>
+<td>3D Print Steering System</td>
+<td>2.5 hr</td>
+</tr>
+<tr>
+<td>Program Servo</td>
+<td>50 min</td>
+</tr>
+<tr>
+<td>Program Arduino with Motor</td>
+<td>1 hr</td>
+</tr>
+<tr>
+<td>Setup I2C</td>
+<td>40 min</td>
+</tr>
+<tr>
+<td>I2C with Joysticks</td>
+<td>30 min</td>
+</tr>
+<tr>
+<td>Improve Multi-Speed Gearbox</td>
+<td>6-10 hr</td>
+</tr>
+<tr>
+<td>3D Print Multi-Speed Gearbox and Drive Shaft</td>
+<td>25-30 hr</td>
+</tr>
+<tr>
+<td>Assemble Car</td>
+<td>1.5 hr</td>
+</tr>
+<tr>
+<td>TOTAL</td>
+<td>45.5-54.5 hr</td>
+</tr>
+</tbody>
+</table>
+<h1 id="project-story-cards">Project Story Cards</h1>
+<p>Must have:</p>
+<ul>
+<li>Differential Rear Wheel Drive</li>
+<li>Steering Mechanism</li>
+<li>Joystick Controller</li>
+</ul>
+<p>Should have:</p>
+<ul>
+<li>Manual 2-Speed Gearbox</li>
+<li>I2C : Remote to Car</li>
+</ul>
+<p>Could have:</p>
+<ul>
+<li>Automatic Gearbox</li>
+<li>RC : Remote to Car</li>
+<li>Multispeed Gearbox</li>
+</ul>
+
+</body>
+</html>
