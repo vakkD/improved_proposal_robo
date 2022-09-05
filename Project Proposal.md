@@ -36,7 +36,7 @@ My original design for the gearbox can be seen in file [[2]](https://raw.githubu
 ![gearboxv1 angleview_complete_compressed.gif](https://github.com/vakkD/improved_proposal_robo/blob/main/gearboxv1%20angleview_complete_compressed.gif)
 <br><sub>(the quality is bad due to attempts at reducing file size, loss-less version [[5]](https://github.com/vakkD/robocarfinal/blob/main/gearboxv1%20angleview_complete.mkv), the gear speed is not accurate on this demonstration, it is only to show the mechanism)</sub>
 
-I have created a new, more compact design [[4]](gearboxv1%20angleview_complete.mkv), this is not worth giving a description for as it follows the same principle as V1 [[7]](gearboxv1%20calculations.txt), just has a shortened rod, condensing the entire mechanism, all other components are the same.
+I have created a new, more compact design [[4]](gearboxv1%20angleview_complete.mkv), this is not worth giving a description for as it follows the same principle as V1 [[7]](gearboxv1%20calculations.txt), just has a shortened rod, condensing the entire mechanism, all other components are the same. The gearbox can not have too high of a gear ratio as the higher up gear ratios would require the gear to sustain more torque, which is not capable of gears this size.
 <br><br>
 ### Car Frame Design
 I created a rough 3D model for the car, so that we can print it later [[8]](carpototyperobotics.blend). The wheels will fall off each side and be supported by some suspension [[1]](https://raw.githubusercontent.com/vakkD/improved_proposal_robo/main/cardesign.jpeg).
